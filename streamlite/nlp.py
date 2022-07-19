@@ -36,5 +36,5 @@ def Sentimentcsv(data):
     print("Sentimentcsv")
     data['sentiment'] = data['answer'].apply(lambda x: sentiment_score(x[:512]))
     print("data-to-csv")
-    data.to_csv("sent.csv", encoding='utf-8', index=False)
-
+    return data.to_csv().encode('utf-8')
+    
